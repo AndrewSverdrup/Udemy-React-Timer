@@ -13,9 +13,9 @@ Nav = (props) ->
                className: 'menu-text'
                'React Timer App'
             li {},
-               React.createElement(IndexLink, {to: '/#',activeClassName:"active-link",activeStyle:{fontWeight:'bold'}}, 'Timer')
+               React.createElement(IndexLink, {to: '/#',activeClassName:"active-link"}, 'Timer')
             li {},
-               React.createElement(Link, {to: '/#',activeClassName:"active-link",activeStyle:{fontWeight:'bold'}}, 'Countdown')
+               React.createElement(Link, {to: '/countdown',activeClassName:"active-link"}, 'Countdown')
 
       div
          className: 'top-bar-right'

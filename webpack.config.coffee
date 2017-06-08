@@ -26,6 +26,9 @@ module.exports =
          # This allows use to just requie('ComponentName') instead of providing paths
          Main: component_path + 'Main.coffee'
          Nav: component_path + 'Nav.coffee'
+         Countdown: component_path + 'Countdown.coffee'
+         Timer: component_path + 'Timer.coffee'
+         Clock: component_path + 'Clock.coffee'
          applicationStyles: 'app/styles/app.scss'
       }
       extensions: [

@@ -8,7 +8,8 @@ Main = (props) ->
          React.createElement(Nav, {}, null)
          div {},
             div {},
+               props.children
                p {},
-                  props.children
+                  null
 
 module.exports = Main;

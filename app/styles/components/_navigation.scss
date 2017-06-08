@@ -6,6 +6,10 @@
    .menu-text {
       color: $nav-text-color;
    }
+
+   .active-link {
+      font-weight: bold;
+   }
 }
 // could also do the following
 // .top-bar .menu-text {}
