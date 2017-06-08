@@ -27,6 +27,7 @@ module.exports =
          Main: component_path + 'Main.coffee'
          Nav: component_path + 'Nav.coffee'
          Countdown: component_path + 'Countdown.coffee'
+         CountdownForm: component_path + 'CountdownForm.coffee'
          Timer: component_path + 'Timer.coffee'
          Clock: component_path + 'Clock.coffee'
          applicationStyles: 'app/styles/app.scss'
