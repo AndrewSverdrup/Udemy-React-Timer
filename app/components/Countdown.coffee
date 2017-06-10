@@ -2,6 +2,7 @@ React = require 'react'
 
 Clock = require 'Clock'
 CountdownForm = require 'CountdownForm'
+Controls = require 'Controls'
 
 {h3, div} = React.DOM
 
@@ -15,7 +16,13 @@ Countdown = React.createClass
             when 'started'
                @startTimer()
             when 'stopped'
+               @setState
+                  count: 0
                clearInterval(@timer)
+               @timer = undefined
+            when 'paused'
+               clearInterval(@timer)
+               @timer = undefined
    startTimer: ->
       @timer = setInterval(
          () =>
@@ -33,10 +40,22 @@ Countdown = React.createClass
       @setState
          count: seconds
          countdownStatus: 'started'
+   handleStatusChange: (newStatus) ->
+      @setState
+         countdownStatus: newStatus
    render: ->
-      {count} = @state
+      {count, countdownStatus} = @state
+      renderControlArea = () =>
+         if countdownStatus isnt 'stopped'
+            React.createElement(
+               Controls, {countdownStatus: countdownStatus, onStatusChange: @handleStatusChange}, null
+            )
+         else
+            React.createElement CountdownForm, {onSetCountdown: @handleSetCountdown}, null
+
       div {},
          React.createElement Clock, {totalSeconds:count}, null
-         React.createElement CountdownForm, {onSetCountdown: @handleSetCountdown}, null
+         renderControlArea()
+
 
 module.exports = Countdown
