@@ -30,6 +30,7 @@ module.exports =
          CountdownForm: component_path + 'CountdownForm.coffee'
          Timer: component_path + 'Timer.coffee'
          Clock: component_path + 'Clock.coffee'
+         Controls: component_path + 'Controls.coffee'
          applicationStyles: 'app/styles/app.scss'
       }
       extensions: [

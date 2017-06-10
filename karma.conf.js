@@ -29,15 +29,14 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'app/tests/**/*.test.coffee',
-      //'app/tests/app.test.coffee',
-      //'app/tests/*Spec.coffee',
-      //'app/tests/*Spec.js'
+      'app/tests/**/*.test.cjsx',
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'app/tests/**/*.test.coffee': ['webpack', 'sourcemap'],
+      'app/tests/**/*.test.cjsx': ['webpack', 'sourcemap'],
    },
 
    client: {
