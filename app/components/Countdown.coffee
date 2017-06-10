@@ -4,7 +4,7 @@ Clock = require 'Clock'
 CountdownForm = require 'CountdownForm'
 Controls = require 'Controls'
 
-{h3, div} = React.DOM
+{h1, h3, div} = React.DOM
 
 Countdown = React.createClass
    getInitialState: ->
@@ -23,6 +23,16 @@ Countdown = React.createClass
             when 'paused'
                clearInterval(@timer)
                @timer = undefined
+   # componentWillUpdate: (nextProps, nextState) ->
+   #    console.log 'component will update'
+   # componentWillMount: ->
+   #    console.log 'Component will mount' # no access to refs/html/dom yet
+   # componentDidMount: ->
+   #    console.log 'Component did mount' # now we have access to dom
+   componentWillUnmount: ->
+      # console.log 'Component will unmount'
+      clearInterval(@timer)
+      @timer = undefined
    startTimer: ->
       @timer = setInterval(
          () =>
@@ -54,6 +64,9 @@ Countdown = React.createClass
             React.createElement CountdownForm, {onSetCountdown: @handleSetCountdown}, null
 
       div {},
+         h1
+            className: 'page-title'
+            'Countdown App'
          React.createElement Clock, {totalSeconds:count}, null
          renderControlArea()
 
