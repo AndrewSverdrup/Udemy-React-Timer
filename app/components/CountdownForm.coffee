@@ -26,6 +26,4 @@ CountdownForm = React.createClass
                'Start'
 
 
-
-
 module.exports = CountdownForm
