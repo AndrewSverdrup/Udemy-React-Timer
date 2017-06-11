@@ -22,3 +22,9 @@ describe 'Controls', ->
          $el = $(ReactDOM.findDOMNode controls)
          $startButton = $el.find 'button:contains(Start)' #Look for a button whose text value is pause
          expect($startButton.length).toBe 1
+
+      it 'should render \'Start\' when stopped', ->
+         controls = TestUtils.renderIntoDocument <Controls countdownStatus='stopped'/>
+         $el = $(ReactDOM.findDOMNode controls)
+         $startButton = $el.find 'button:contains(Start)'
+         expect($startButton.length).toBe 1

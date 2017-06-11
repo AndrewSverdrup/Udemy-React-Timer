@@ -11,13 +11,13 @@ Controls = React.createClass
          @props.onStatusChange newStatus
    render: () ->
       {countdownStatus} = @props
-      renderStartStopButton = => # This must be =>, not ->. Why?
+      renderStartStopButton = => # This must be =>, not ->. b/c @ (this) is used inside it
          if countdownStatus is 'started'
             button
                onClick: @onStatusChange 'paused'
                className: 'button secondary'
                'Pause'
-         else if countdownStatus is 'paused'
+         else #if countdownStatus is 'paused' or 'stopped'
             button
                onClick: @onStatusChange 'started'
                className: 'button primary'
