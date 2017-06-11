@@ -28,6 +28,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'node_modules/jquery/dist/jquery.min.js', // If a test includes jQuery, you must specify this here before the test file that will execute the jQuery statement(s)
+      'node_modules/foundation-sites/dist/foundation.min.js',
       'app/tests/**/*.test.coffee',
       'app/tests/**/*.test.cjsx',
     ],

@@ -7,7 +7,6 @@ Timer = require 'Timer'
 Countdown = require 'Countdown'
 
 # Load foundation
-require 'style!css!sass!foundation-sites/dist/foundation.min.css'
 $(document).foundation();
 
 # App css

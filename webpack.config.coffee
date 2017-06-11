@@ -1,6 +1,7 @@
-component_path = 'app/components/'
-
 webpack = require 'webpack'
+path = require 'path'
+
+component_path = 'app/components/'
 
 module.exports =
    entry: [
@@ -44,5 +45,9 @@ module.exports =
          loader: 'coffee-jsx-loader'
          test: /(\.coffee|\.cjsx)$/,
          exclude: /(node_modules|bower_components)/
+      ]
+   sassLoader:
+      includePaths: [
+         path.resolve(__dirname, './node_modules/foundation-sites/scss')
       ]
    devtool: 'cheap-module-eval-source-map'
